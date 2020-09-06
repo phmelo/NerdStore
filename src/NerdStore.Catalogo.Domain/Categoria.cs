@@ -1,4 +1,5 @@
 ﻿using NerdStore.Core.DomainObjects;
+using System.Collections.Generic;
 
 namespace NerdStore.Catalogo.Domain
 {
@@ -6,7 +7,10 @@ namespace NerdStore.Catalogo.Domain
     {
         public string Nome { get; private set; }
         public int Codigo { get; private set; }
-        protected Categoria() { }
+        // EF Relation
+        public ICollection<Produto> Produtos { get; set; }
+
+        protected Categoria() { } //Por causa do EF ele precisa de um construtor sem parametros.
 
         public Categoria(string nome, int codigo)
         {
