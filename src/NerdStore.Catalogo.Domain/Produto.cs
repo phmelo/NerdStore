@@ -52,6 +52,11 @@ namespace NerdStore.Catalogo.Domain
             QuantidadeEstoque -= quantidade;
         }
 
+        public void ReporEstoque(int quantidade)
+        {
+            QuantidadeEstoque += quantidade;
+        }
+
         public bool PossuiEstoque(int quantidade)
         {
             return QuantidadeEstoque >= quantidade;
