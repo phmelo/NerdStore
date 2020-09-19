@@ -12,4 +12,4 @@ namespace NerdStore.Core.Messages
         }
     }
 }
-}
+
