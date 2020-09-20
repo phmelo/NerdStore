@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Catalogo.Application.Services
 {
-    class ProdutoAppService : IProdutoAppService
+    public class ProdutoAppService : IProdutoAppService
     {
         private readonly IProdutoRepository _produtoRepository;
         private readonly IEstoqueService _estoqueService;

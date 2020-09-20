@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Catalogo.Application.Services
 {
-    interface IProdutoAppService:IDisposable
+    public interface IProdutoAppService:IDisposable
     {
         Task<IEnumerable<ProdutoDTO>> ObterPorCategoria(int codigo);
         Task<ProdutoDTO> ObterPorId(Guid id);
