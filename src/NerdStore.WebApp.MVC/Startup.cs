@@ -16,6 +16,7 @@ using AutoMapper;
 using NerdStore.Catalogo.Application.AutoMapper;
 using MediatR;
 using NerdStore.WebApp.MVC.DomainDependencyInjection;
+using NerdStore.Vendas.Data;
 
 namespace NerdStore.WebApp.MVC
 {
@@ -35,6 +36,9 @@ namespace NerdStore.WebApp.MVC
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<Catalogo.Data.CatalogoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<VendasContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

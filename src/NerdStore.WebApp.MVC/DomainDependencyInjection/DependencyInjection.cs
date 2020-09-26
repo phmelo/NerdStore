@@ -7,6 +7,8 @@ using NerdStore.Catalogo.Domain;
 using NerdStore.Catalogo.Domain.Events;
 using NerdStore.Core.Bus;
 using NerdStore.Vendas.Application.Commands;
+using NerdStore.Vendas.Data.Repository;
+using NerdStore.Vendas.Domain;
 
 namespace NerdStore.WebApp.MVC.DomainDependencyInjection
 {
@@ -15,7 +17,7 @@ namespace NerdStore.WebApp.MVC.DomainDependencyInjection
         public static void AddDomainServices(this IServiceCollection services)
         {
             // Domain Bus (Mediator)
-            services.AddScoped<IMediatrHandler, MediatrHandler>();
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
 
             // Catalogo
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
@@ -25,6 +27,8 @@ namespace NerdStore.WebApp.MVC.DomainDependencyInjection
 
             services.AddScoped<INotificationHandler<ProdutoAbaixoEstoqueEvent>, ProdutoEventHandler>();
             services.AddScoped<IRequestHandler<AdicionarItemPedidoCommand, bool>, PedidoCommandHandler>();
+
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
         }
 
     }

@@ -12,7 +12,7 @@ namespace NerdStore.Catalogo.Domain
     {
 
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IMediatrHandler _bus;
+        private readonly IMediatorHandler _bus;
         public EstoqueService(IProdutoRepository produtoRepository)
         {
             _produtoRepository = produtoRepository;
